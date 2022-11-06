@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 
 import logoSvg from "../../assets/img/pizza-logo.svg";
 
@@ -9,13 +8,13 @@ import { Link } from "react-router-dom";
 
 import styles from "./Header.module.scss";
 
-import {HEADER} from './Header.constants'
+import { HEADER } from "./Header.constants";
 
 const Header = () => {
   const { addedPizzasToCart, getPizzasPrice } = usePizzas();
   return (
-    <div className="row justify-content-center">
-      <div className={cn(styles.logo, "col-md-4")}>
+    <div className="row mb-5">
+      <div className="col-6 d-flex">
         <Link to={"/"}>
           <img width="38" src={logoSvg} alt="Pizza logo" />
         </Link>
@@ -25,7 +24,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className={cn(styles.cart, "col-md-4 offset-md-4 span-md-4")}>
+      <div className="col-6 d-flex justify-content-end align-items-center">
         <Link to="/cart" className={styles.itemsCart}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
