@@ -1,0 +1,48 @@
+.pizza {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  .info {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    img {
+      width: 150px;
+      margin-right: 10px;
+    }
+  }
+  .counter {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 800;
+    font-size: 20px;
+
+    svg {
+      cursor: pointer;
+      color: var(--orange);
+      margin: 0 20px;
+    }
+  }
+  .price {
+    font-weight: 800;
+    font-size: 20px;
+  }
+  .remove {
+    opacity: 30%;
+    cursor: pointer;
+    &:hover {
+      transition: opacity 0.15s ease;
+      opacity: 70%;
+    }
+  }
+  .category {
+    h3 {
+      font-weight: 800;
+    }
+    p {
+      letter-spacing: 1px;
+      opacity: 60%;
+    }
+  }
+}

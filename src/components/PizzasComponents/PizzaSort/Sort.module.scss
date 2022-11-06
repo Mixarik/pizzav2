@@ -1,0 +1,38 @@
+.sort {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  .text {
+    cursor: pointer;
+    min-width: 250px;
+  }
+  svg {
+    margin-right: 3px;
+  }
+  b {
+    margin-right: 3px;
+  }
+  span {
+    border-bottom: 2px dashed var(--orange);
+    color: var(--orange);
+  }
+}
+
+.modal {
+  margin-top: 15px;
+  position: absolute;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    border-radius: 10px;
+  }
+  li {
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .active {
+    color: var(--orange);
+  }
+}

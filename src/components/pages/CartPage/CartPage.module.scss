@@ -1,0 +1,11 @@
+.wrapper {
+  background-color: white;
+  border-radius: 10px;
+  width: var(--container-width);
+  min-width: 600px;
+  padding: 3%;
+  .content {
+    max-width: 1000px;
+  }
+}
+

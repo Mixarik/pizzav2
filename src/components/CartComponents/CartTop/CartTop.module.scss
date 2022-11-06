@@ -1,0 +1,12 @@
+.clear {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 50%;
+
+  &:hover {
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+    opacity: 70%;
+  }
+}

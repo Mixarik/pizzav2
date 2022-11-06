@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  h2 {
+    font-weight: 800;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-right: 20px;
+    }
+  }
+  p {
+    opacity: 80%;
+  }
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.itemsCart {
+  color: white;
+  display: inline-block;
+  background-color: var(--orange);
+  border-radius: 30px;
+  padding: 10px 20px;
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  border: 1px solid transparent;
+
+  span {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: darken(white, 8%);
+    background-color: var(--mouseOnOrange);
+  }
+}

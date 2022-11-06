@@ -1,0 +1,50 @@
+.allPizzas {
+  font-size: 25px;
+  .price {
+    b {
+      color: var(--orange);
+    }
+  }
+}
+
+.goBack {
+  opacity: 40%;
+span{
+  &:hover {
+    opacity: 90%;
+  }
+}
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    max-width: 200px;
+    border-radius: 30px;
+    border: 1px solid var(--pizza-black);
+  }
+  svg {
+    margin-right: 5px;
+    color: var(--pizza-black);
+  }
+}
+
+.buyNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0;
+  max-width: 200px;
+  background-color: var(--orange);
+  border-radius: 30px;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--mouseOnOrange);
+  }
+  span {
+    color: white;
+    font-weight: 800;
+  }
+}
