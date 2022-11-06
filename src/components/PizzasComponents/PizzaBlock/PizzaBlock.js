@@ -13,11 +13,11 @@ const PizzaBlock = ({ imageUrl, name, price, sizes, types, id, count }) => {
   const { addPizzaToCart } = usePizzas();
 
   return (
-    <div className="col-4 d-flex flex-column align-items-center fw-bold p-5">
+    <div className="col-xxl-4 col-md-6  d-flex flex-column align-items-center fw-bold p-5">
       <img src={imageUrl} alt="Pizza" width="260" />
 
       <div className={cn("w-100 text-center", styles.pizzaInfo)}>
-        <h4 className="fw-bold">{name}</h4>
+        <h4 className="fw-bold mb-3">{name}</h4>
 
         <div className="mb-4">
           <div className="mb-3">
