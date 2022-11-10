@@ -77,33 +77,35 @@ const PizzaPage = () => {
   };
 
   return (
-    <div className="container-fluid p-5">
-      <div className={styles.wrapper}>
-        <Header />
+    <div className={cn(styles.wrapper, "container-fluid ")}>
+      <Header />
 
+      <div className="row justify-content-end my-5 ">
         <input
-          className="form-control mb-5"
+          className="form-control"
           type="text"
           placeholder="search"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
+      </div>
 
-        <div className="row mb-5">
-          <Categories
-            selectedCategory={selectedCategory}
-            changeSelectedCategory={changeSelectedCategory}
-          />
-          <Sort
-            selectedSortCategory={selectedSortCategory}
-            changeModalSorted={changeModalSorted}
-            modalSorted={modalSorted}
-            changeSelectedSortCategory={changeSelectedSortCategory}
-          />
-        </div>
+      <div className="my-5 row">
+        <Categories
+          selectedCategory={selectedCategory}
+          changeSelectedCategory={changeSelectedCategory}
+        />
+        <Sort
+          selectedSortCategory={selectedSortCategory}
+          changeModalSorted={changeModalSorted}
+          modalSorted={modalSorted}
+          changeSelectedSortCategory={changeSelectedSortCategory}
+        />
+      </div>
 
-        <h2 className={styles.title}>Все пиццы</h2>
+      <h2 className={styles.title}>Все пиццы</h2>
 
+      <div className="container-fluid">
         <div className="row">
           {isLoading
             ? "loading..."
