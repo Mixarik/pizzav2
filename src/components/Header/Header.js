@@ -38,7 +38,7 @@ const Header = () => {
           </svg>
 
           <span>
-            {addedPizzasToCart.length} - {getPizzasPrice()} ₽
+            {addedPizzasToCart.length} - {getPizzasPrice()} {HEADER.RUB}
           </span>
         </Link>
       </div>

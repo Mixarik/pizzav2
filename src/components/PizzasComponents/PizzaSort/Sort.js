@@ -13,7 +13,10 @@ const Sort = ({
 }) => {
   return (
     <div
-      className={cn(styles.sort, "col-3 d-flex align-items-center position-relative justify-content-end")}
+      className={cn(
+        styles.sort,
+        "col-3 d-flex align-items-center position-relative justify-content-end"
+      )}
       onClick={() => changeModalSorted()}
     >
       {modalSorted ? (
