@@ -21,31 +21,34 @@ const CartPage = () => {
   } = usePizzas();
 
   return (
-    <div className={cn(styles.wrapper, "container-fluid")}>
-      <div className="row">
-        <Header />
-      </div>
-      {addedPizzasToCart.length > 0 ? (
-        <div className={cn(styles.content, "container")}>
-          <CartTop resetPizzaCart={resetPizzaCart} />
+    <div className="container-fluid mb-5 p-5">
+      <div className={styles.wrapper}>
 
-          {addedPizzasToCart.map((item) => (
-            <ContentCart
-              key={item.id}
-              {...item}
-              updateAddedPizzasCount={updateAddedPizzasCount}
-              removePizza={removePizza}
+          <Header />
+
+        {addedPizzasToCart.length > 0 ? (
+          <div className= "container">
+
+            <CartTop resetPizzaCart={resetPizzaCart} />
+
+            {addedPizzasToCart.map((item) => (
+              <ContentCart
+                key={item.id}
+                {...item}
+                updateAddedPizzasCount={updateAddedPizzasCount}
+                removePizza={removePizza}
+              />
+            ))}
+
+            <CartBottom
+              totalPrice={getPizzasPrice()}
+              pizzasCount={getPizzasCount()}
             />
-          ))}
-
-          <CartBottom
-            totalPrice={getPizzasPrice()}
-            pizzasCount={getPizzasCount()}
-          />
-        </div>
-      ) : (
-        <CartEmpty />
-      )}
+          </div>
+        ) : (
+          <CartEmpty />
+        )}
+      </div>
     </div>
   );
 };

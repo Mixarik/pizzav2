@@ -1,4 +1,6 @@
 import React from "react";
+
+import cn from "classnames";
 import styles from "./ContentCart.module.scss";
 
 import { TYPES, CONTENT_CART } from "./ContentCard.constants";
@@ -15,8 +17,8 @@ const ContentCart = ({
   removePizza,
 }) => {
   return (
-    <div className={styles.pizza}>
-      <div className={styles.info}>
+    <div className="d-flex justify-content-between align-items-center mb-5">
+      <div className={cn(styles.info, "d-flex align-items-center")}>
         <img src={imageUrl} alt="Pizza" />
 
         <div className={styles.category}>
@@ -27,7 +29,7 @@ const ContentCart = ({
         </div>
       </div>
 
-      <div className={styles.counter}>
+      <div className="d-flex justify-content-around fw-bold fs-5">
         <div
           onClick={() => {
             count > 1 && updateAddedPizzasCount(id, count - 1);
@@ -38,7 +40,7 @@ const ContentCart = ({
             width="25"
             height="25"
             fill="currentColor"
-            className="bi bi-dash-circle"
+            className={cn(styles.icon, "bi bi-dash-circle")}
             viewBox="0 0 16 16"
           >
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -56,7 +58,7 @@ const ContentCart = ({
             width="25"
             height="25"
             fill="currentColor"
-            className="bi bi-plus-circle"
+            className={cn(styles.icon, "bi bi-dash-circle")}
             viewBox="0 0 16 16"
           >
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -65,7 +67,7 @@ const ContentCart = ({
         </div>
       </div>
 
-      <div className={styles.price}>
+      <div className="fw-bold fs-5">
         <b>
           {price * count} {CONTENT_CART.RUB}
         </b>

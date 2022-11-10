@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cn from "classnames";
 
 import { Header } from "../../Header";
 import { Categories } from "../../PizzasComponents/PizzaCategories";
@@ -89,7 +88,7 @@ const PizzaPage = () => {
           onChange={(e) => setInputValue(e.target.value)}
         />
 
-        <div className="row mb-5">
+        <div className="row d-flex align-items-center mb-5">
           <Categories
             selectedCategory={selectedCategory}
             changeSelectedCategory={changeSelectedCategory}

@@ -9,20 +9,14 @@
 
 .goBack {
   opacity: 40%;
-span{
+  height: 60px;
+  width: 200px;
+  border-radius: 30px;
+  border: 1px solid var(--pizza-black);
+
   &:hover {
+    transition: opacity 0.15s ease;
     opacity: 90%;
-  }
-}
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    padding: 0;
-    max-width: 200px;
-    border-radius: 30px;
-    border: 1px solid var(--pizza-black);
   }
   svg {
     margin-right: 5px;
@@ -31,12 +25,8 @@ span{
 }
 
 .buyNow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 60px;
-  padding: 0;
-  max-width: 200px;
+  width: 200px;
   background-color: var(--orange);
   border-radius: 30px;
   &:hover {

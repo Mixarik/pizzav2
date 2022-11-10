@@ -5,7 +5,7 @@ import styles from "./CartTop.module.scss";
 import { CART_TOP } from "./CartTop.constants";
 
 const CartTop = ({ resetPizzaCart }) => (
-  <div className="row justify-content-center my-5">
+  <div className="row justify-content-center mb-5">
     <div className="col">
       <h2 className="content__title">
         <svg
@@ -22,7 +22,12 @@ const CartTop = ({ resetPizzaCart }) => (
       </h2>
     </div>
 
-    <div className={cn(styles.clear, "col offset-md-4")}>
+    <div
+      className={cn(
+        styles.clear,
+        "col d-flex justify-content-end align-items-center"
+      )}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

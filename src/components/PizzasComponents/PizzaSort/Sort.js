@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import styles from "./Sort.module.scss";
 
-const sortCategory = ["популярности", "цене", "алфавиту"];
+import { SORT_CATEGORY } from "./Sort.constants";
 
 const Sort = ({
   changeModalSorted,
@@ -13,10 +13,7 @@ const Sort = ({
 }) => {
   return (
     <div
-      className={cn(
-        styles.sort,
-        "col-3 d-flex align-items-center position-relative justify-content-end"
-      )}
+      className={cn(styles.sort, "col-3")}
       onClick={() => changeModalSorted()}
     >
       {modalSorted ? (
@@ -44,12 +41,12 @@ const Sort = ({
       )}
 
       <b>Сортировка по:</b>
-      <span>{sortCategory[selectedSortCategory]}</span>
+      <span>{SORT_CATEGORY.CATEGORY[selectedSortCategory]}</span>
 
       {modalSorted && (
         <div className={styles.modal}>
           <ul>
-            {sortCategory.map((item, idx) => {
+            {SORT_CATEGORY.CATEGORY.map((item, idx) => {
               return (
                 <li
                   className={selectedSortCategory === idx ? styles.active : ""}

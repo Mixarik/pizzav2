@@ -1,11 +1,10 @@
 .wrapper {
   background-color: white;
   border-radius: 10px;
-  width: var(--container-width);
-  min-width: 600px;
+  min-width: 360px;
   padding: 3%;
-  .content {
-    max-width: 1000px;
+
+  .title {
+    font-weight: bold;
   }
 }
-

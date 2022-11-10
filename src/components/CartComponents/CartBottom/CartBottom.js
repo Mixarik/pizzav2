@@ -8,15 +8,15 @@ import { CART_BOTTOM } from "./CartBottom.constants";
 
 const CartBottom = ({ totalPrice, pizzasCount }) => (
   <div className="container">
-    <div className={`row justify-content-center my-5  ${styles.allPizzas}`}>
-      <div className="col">
+    <div className={cn("row justify-content-center mb-5 ", styles.allPizzas)}>
+      <div className="col-6">
         {CART_BOTTOM.TOTAL_PIZZA}{" "}
         <b>
           {pizzasCount} {CART_BOTTOM.THING}
         </b>
       </div>
-      <div className={cn(styles.price, "col-md-4")}>
-        {CART_BOTTOM.ORDER_PRICE}{" "}
+      <div className={cn(styles.price, "col-6 d-flex justify-content-end")}>
+        {CART_BOTTOM.ORDER_PRICE}
         <b>
           {totalPrice} {CART_BOTTOM.RUB}
         </b>
@@ -24,8 +24,8 @@ const CartBottom = ({ totalPrice, pizzasCount }) => (
     </div>
 
     <div className="row justify-content-center ">
-      <div className={cn(styles.goBack, "col-md-9")}>
-        <Link to="/">
+      <div className="col-6">
+        <Link className={cn(styles.goBack ,'d-flex justify-content-center align-items-center')} to="/">
           <svg
             width="8"
             height="14"
@@ -45,8 +45,10 @@ const CartBottom = ({ totalPrice, pizzasCount }) => (
         </Link>
       </div>
 
-      <div className={cn(styles.buyNow, "col")}>
-        <span>{CART_BOTTOM.BUY_NOW}</span>
+      <div className="col-6 d-flex justify-content-end">
+        <div className={cn(styles.buyNow ,'d-flex justify-content-center align-items-center' )}>
+          <span>{CART_BOTTOM.BUY_NOW}</span>
+        </div>
       </div>
     </div>
   </div>
