@@ -79,7 +79,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetch(
-      "https://63483f1a0b382d796c6d9668.mockapi.io/api/photo_collection/collections"
+      "https://63483f1a0b382d796c6d9668.mockapi.io/api/collections"
     )
       .then((res) => res.json())
       .then((pizzas) => dispatch({ type: "setPizza", payload: pizzas }))
