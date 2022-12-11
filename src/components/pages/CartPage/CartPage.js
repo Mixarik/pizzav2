@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 import styles from "../CartPage/CartPage.module.scss";
 
 import { Header } from "../../Header";

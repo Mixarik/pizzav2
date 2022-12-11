@@ -17,14 +17,26 @@ export const AppContext = createContext({
 const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [state1, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(reducer, {
     pizzas: [],
     addedPizzasToCart: [],
     pizzasParams: [],
   });
 
+  const { pizzas, addedPizzasToCart } = state;
 
-  const { pizzas, addedPizzasToCart, pizzasParams } = state1;
+  useEffect(() => {
+    fetch(
+        "https://63483f1a0b382d796c6d9668.mockapi.io/api/collections"
+    )
+        .then((res) => res.json())
+        .then((pizzas) => dispatch({ type: "setPizza", payload: pizzas }))
+        .catch((err) => {
+          alert(err);
+          console.log(err);
+        })
+        .finally(() => setIsLoading(false));
+  }, []);
 
   const setAddedPizzasToCart = (addedPizzasToCart) => {
     localStorage.setItem("addedPizzas", JSON.stringify(addedPizzasToCart));
@@ -76,19 +88,6 @@ const AppProvider = ({ children }) => {
   const removePizza = (id) => {
     setAddedPizzasToCart(addedPizzasToCart.filter((pizza) => pizza.id !== id));
   };
-
-  useEffect(() => {
-    fetch(
-      "https://63483f1a0b382d796c6d9668.mockapi.io/api/collections"
-    )
-      .then((res) => res.json())
-      .then((pizzas) => dispatch({ type: "setPizza", payload: pizzas }))
-      .catch((err) => {
-        alert(err);
-        console.log(err);
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
 
   useLayoutEffect(() => {
     const addedPizzas = localStorage.getItem("addedPizzas");
